@@ -1,0 +1,22 @@
+CREATE TABLE Food(id INTEGER PRIMARY KEY, MEDIUM TEXT, BRAND TEXT, PRICE INTEGER, Popularity INTEGER);
+
+INSERT INTO Food VALUES (1, "cheese", "Daiya", 5.49, 80);
+INSERT INTO Food VALUES (2, "pasta", "Barilla", 1.79, 93);
+INSERT INTO Food VALUES (3, "Ketchup", "Heinz", 1.99, 65);
+INSERT INTO Food VALUES (4, "Bread", "Bakery", 3.99, 89);
+INSERT INTO Food VALUES (5, "Black Tea", "Lipton", 5.99, 45);
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
